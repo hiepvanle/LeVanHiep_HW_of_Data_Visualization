@@ -1,0 +1,64 @@
+Alice in Wonderland NLP Analysis
+Overview
+This project performs a Natural Language Processing (NLP) analysis on Alice's Adventures in Wonderland by Lewis Carroll. The analysis includes text preprocessing, word frequency visualization (word cloud and bar chart), semantic word relationship visualization using GloVe embeddings and PCA, and a cosine similarity heatmap to explore word relationships. The results are summarized in a report (report.md).
+Features
+
+Text Preprocessing: Cleans the text by removing metadata, punctuation, stopwords, and non-alphabetic tokens.
+Word Cloud: Visualizes word frequencies with larger words indicating higher frequency.
+Bar Chart: Displays the top 20 most frequent words.
+PCA Plot: Shows semantic relationships among words using GloVe embeddings reduced to 2D.
+Cosine Similarity Heatmap: Quantifies semantic similarities between the top 25 words.
+Report: Summarizes findings in a structured markdown file.
+
+Dependencies
+To run the analysis, install the following Python libraries:
+pip install nltk wordcloud matplotlib gensim scikit-learn seaborn numpy
+
+Additionally, download required NLTK data and GloVe embeddings:
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+import gensim.downloader as api
+glove_model = api.load("glove-wiki-gigaword-100")
+
+Setup
+
+Clone the Repository:
+git clone <repository-url>
+cd <repository-directory>
+
+
+Prepare the Text:
+
+Place the text of Alice's Adventures in Wonderland in a file named Alice.txt in the project directory.
+Ensure the text includes the markers CHAPTER I. and *** END OF THE PROJECT GUTENBERG EBOOK 11 *** for metadata removal.
+
+
+Run the Analysis:
+
+Open NLP.ipynb in Jupyter Notebook or a compatible environment.
+Execute the cells to preprocess the text, generate visualizations, and produce the report.
+
+
+
+Usage
+
+Jupyter Notebook: Run NLP.ipynb to execute the full analysis and generate visualizations.
+Output: Visualizations (word cloud, bar chart, PCA plot, heatmap) are displayed inline. The report is saved as report.md.
+Customization: Modify parameters in NLP.ipynb (e.g., number of words for PCA or heatmap) to adjust the analysis scope.
+
+Files
+
+NLP.ipynb: Jupyter Notebook containing the analysis code.
+Alice.txt: Input text file (not included; user must provide).
+report.md: Generated report summarizing the analysis.
+README.md: This file, providing project overview and instructions.
+
+Notes
+
+The GloVe model glove-wiki-gigaword-100 is used for efficiency. Larger models (e.g., 300D) may improve accuracy but require more memory.
+Ensure sufficient computational resources for loading GloVe embeddings and generating visualizations.
+The analysis assumes the text is in English and formatted similarly to Project Gutenberg's version.
+
+License
+This project is licensed under the MIT License.
